@@ -18,7 +18,9 @@ During a typical "snake" draft, each of 8-12 players are assigned an order to dr
 
 Say you pick Aaron Rodgers while Drew Brees is still available.  We can infer that you valued Rodgers more than Brees (as well as many other quarterbacks available at that point).  Thus each pick induces many pairwise comparisons for an individual.  We can use this information to infer their valuations for the players.
 
-Each draft proceeds differently and in many cases people might pick Brees over Rodgers.  They must be doing this because they have different valuations for the players and therefore there isn't a consensus about which of the two is the better pick.
+Each draft proceeds differently and in many cases people might pick Brees over Rodgers.  They must be doing this because they have different valuations for the players and therefore there isn't a consensus about which of the two is the better pick.  In general we can think of each person in the population having a potentially different valuation for every player.  Like so:
+
+<img src="https://raw.github.com/seanjtaylor/fantasy-football/master/figures/qb.examples.png">
 
 ## Modelling Valuations
 
@@ -84,3 +86,8 @@ For quarterbacks alone, this data set generates 187,000 pairwise comparisons mad
 ## Estimation
 
 I estimate the generative model described above using JAGS.  You can see the code to do this in `inference.r`.
+
+Here's what the mean/variance parameters for QBs looks like so far:
+
+<img src="https://raw.github.com/seanjtaylor/fantasy-football/master/figures/qb.mean.variance.png">
+
