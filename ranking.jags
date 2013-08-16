@@ -1,0 +1,10 @@
+model {
+	for (i in 1:nplayers) {
+		player_quality[i] ~ dnorm(0, 1)
+	}
+	for (k in 1:N) {
+	    wins[k] ~ dbern(p[k])
+	    logit(p[k]) <- player_quality[winnerids[k]] - player_quality[loserids[k]]
+	}
+
+}
