@@ -14,7 +14,7 @@ get.df.file<-function(draft.id) {
   close(f)
 
   ## this is a crappy heuristic, but it works for non-draft pages
-  if (length(html) != 181){
+  if (length(html) != 182){
     return(data.frame())
   }
 
@@ -23,7 +23,7 @@ get.df.file<-function(draft.id) {
   
   doc <- htmlParse(html.clean, asText=TRUE)
   tableNodes = getNodeSet(doc, "//table")
-  draft.table <- readHTMLTable(tableNodes[[2]], stringsAsFactors=F)
+  draft.table <- readHTMLTable(tableNodes[[2]], stringsAsFactors=F, header=F)
   draft.table <- draft.table[,2:ncol(draft.table)]
 
   n.drafters <- ncol(draft.table)
